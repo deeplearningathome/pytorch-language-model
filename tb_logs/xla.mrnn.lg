@@ -1,0 +1,97 @@
+okuchaiev@Obox:~/repos/models/tutorials/rnn/ptb$ python ptb_word_lm.py --model large --data_path /home/okuchaiev/Workspace/Data/Text/PTB --save_path=here3
+WARNING:tensorflow:Error encountered when serializing LAYER_NAME_UIDS.
+Type is unsupported, or the types of the items don't match field type in CollectionDef.
+'dict' object has no attribute 'name'
+2017-06-11 19:33:10.631252: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2017-06-11 19:33:10.631613: I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] Found device 0 with properties: 
+name: GeForce GTX 1080
+major: 6 minor: 1 memoryClockRate (GHz) 1.7335
+pciBusID 0000:01:00.0
+Total memory: 7.92GiB
+Free memory: 6.70GiB
+2017-06-11 19:33:10.631625: I tensorflow/core/common_runtime/gpu/gpu_device.cc:927] DMA: 0 
+2017-06-11 19:33:10.631628: I tensorflow/core/common_runtime/gpu/gpu_device.cc:937] 0:   Y 
+2017-06-11 19:33:10.631647: I tensorflow/core/common_runtime/gpu/gpu_device.cc:996] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1080, pci bus id: 0000:01:00.0)
+2017-06-11 19:33:11.038740: I tensorflow/compiler/xla/service/platform_util.cc:58] platform CUDA present with 1 visible devices
+2017-06-11 19:33:11.038759: I tensorflow/compiler/xla/service/platform_util.cc:58] platform Host present with 4 visible devices
+2017-06-11 19:33:11.039162: I tensorflow/compiler/xla/service/service.cc:174] XLA service 0x7416de0 executing computations on platform Host. Devices:
+2017-06-11 19:33:11.039176: I tensorflow/compiler/xla/service/service.cc:182]   StreamExecutor device (0): <undefined>, <undefined>
+2017-06-11 19:33:11.039209: I tensorflow/compiler/xla/service/platform_util.cc:58] platform CUDA present with 1 visible devices
+2017-06-11 19:33:11.039214: I tensorflow/compiler/xla/service/platform_util.cc:58] platform Host present with 4 visible devices
+2017-06-11 19:33:11.039400: I tensorflow/compiler/xla/service/service.cc:174] XLA service 0x81c4a40 executing computations on platform CUDA. Devices:
+2017-06-11 19:33:11.039407: I tensorflow/compiler/xla/service/service.cc:182]   StreamExecutor device (0): GeForce GTX 1080, Compute Capability 6.1
+Epoch: 1 Learning rate: 1.000
+WARNING:tensorflow:Error encountered when serializing LAYER_NAME_UIDS.
+Type is unsupported, or the types of the items don't match field type in CollectionDef.
+'dict' object has no attribute 'name'
+0.008 perplexity: 210670.691 speed: 838 wps
+0.107 perplexity: 6864.969 speed: 2786 wps
+0.206 perplexity: 3468.396 speed: 3069 wps
+0.306 perplexity: 2707.506 speed: 3181 wps
+0.405 perplexity: 2336.628 speed: 3241 wps
+0.505 perplexity: 2108.247 speed: 3277 wps
+0.604 perplexity: 1752.968 speed: 3304 wps
+0.704 perplexity: 1524.902 speed: 3324 wps
+0.803 perplexity: 1359.166 speed: 3338 wps
+0.903 perplexity: 1230.374 speed: 3349 wps
+Epoch: 1 Train Perplexity: 1125.790
+Epoch: 1 Valid Perplexity: 486.633
+Epoch: 2 Learning rate: 1.000
+0.008 perplexity: 467.737 speed: 3456 wps
+0.107 perplexity: 417.700 speed: 3383 wps
+0.206 perplexity: 414.383 speed: 3415 wps
+0.306 perplexity: 394.024 speed: 3427 wps
+0.405 perplexity: 381.399 speed: 3429 wps
+0.505 perplexity: 367.968 speed: 3433 wps
+0.604 perplexity: 351.945 speed: 3435 wps
+0.704 perplexity: 339.690 speed: 3436 wps
+0.803 perplexity: 328.194 speed: 3436 wps
+0.903 perplexity: 317.110 speed: 3437 wps
+Epoch: 2 Train Perplexity: 308.638
+Epoch: 2 Valid Perplexity: 209.642
+Epoch: 3 Learning rate: 1.000
+0.008 perplexity: 237.073 speed: 3483 wps
+0.107 perplexity: 218.809 speed: 3444 wps
+WARNING:tensorflow:Error encountered when serializing LAYER_NAME_UIDS.
+Type is unsupported, or the types of the items don't match field type in CollectionDef.
+'dict' object has no attribute 'name'
+0.206 perplexity: 228.106 speed: 3436 wps
+0.306 perplexity: 223.532 speed: 3442 wps
+0.405 perplexity: 222.219 speed: 3443 wps
+0.505 perplexity: 219.542 speed: 3441 wps
+0.604 perplexity: 214.947 speed: 3438 wps
+0.704 perplexity: 212.178 speed: 3440 wps
+0.803 perplexity: 208.989 speed: 3440 wps
+0.903 perplexity: 205.020 speed: 3441 wps
+Epoch: 3 Train Perplexity: 202.780
+Epoch: 3 Valid Perplexity: 163.925
+Epoch: 4 Learning rate: 1.000
+0.008 perplexity: 185.480 speed: 3449 wps
+0.107 perplexity: 168.248 speed: 3432 wps
+0.206 perplexity: 178.429 speed: 3439 wps
+0.306 perplexity: 175.136 speed: 3442 wps
+0.405 perplexity: 175.331 speed: 3443 wps
+0.505 perplexity: 174.045 speed: 3443 wps
+0.604 perplexity: 170.967 speed: 3428 wps
+0.704 perplexity: 169.780 speed: 3433 wps
+0.803 perplexity: 168.272 speed: 3437 wps
+0.903 perplexity: 165.712 speed: 3439 wps
+Epoch: 4 Train Perplexity: 164.677
+Epoch: 4 Valid Perplexity: 142.005
+Epoch: 5 Learning rate: 1.000
+0.008 perplexity: 145.459 speed: 3508 wps
+0.107 perplexity: 142.108 speed: 3463 wps
+0.206 perplexity: 152.552 speed: 3462 wps
+0.306 perplexity: 149.109 speed: 3466 wps
+WARNING:tensorflow:Error encountered when serializing LAYER_NAME_UIDS.
+Type is unsupported, or the types of the items don't match field type in CollectionDef.
+'dict' object has no attribute 'name'
+0.405 perplexity: 149.736 speed: 3456 wps
+0.505 perplexity: 149.085 speed: 3456 wps
+0.604 perplexity: 146.773 speed: 3455 wps
+0.704 perplexity: 146.335 speed: 3455 wps
+0.803 perplexity: 145.289 speed: 3455 wps
+0.903 perplexity: 143.136 speed: 3456 wps
+Epoch: 5 Train Perplexity: 142.707
+Epoch: 5 Valid Perplexity: 125.902
+
