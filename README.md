@@ -1,5 +1,3 @@
-Forked and corrected. working model
-
 # Simple Word-based Language Model in PyTorch
 This model is directly analagous to this [Tesnsorflow's LM](https://www.tensorflow.org/tutorials/recurrent).
 In fact, the reader is directly taken from its older version
