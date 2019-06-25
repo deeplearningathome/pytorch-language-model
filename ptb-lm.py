@@ -7,9 +7,10 @@ import torch.nn as nn
 from lm import repackage_hidden, LM_LSTM
 import reader
 import numpy as np
+import copy
 
 parser = argparse.ArgumentParser(description='Simplest LSTM-based language model in PyTorch')
-parser.add_argument('--data', type=str, default='data',
+parser.add_argument('--data', type=str, default='data/penn-treebank/',
                     help='location of the data corpus')
 parser.add_argument('--hidden_size', type=int, default=1500,
                     help='size of word embeddings')
@@ -39,18 +40,28 @@ def run_epoch(model, data, is_train=False, lr=1.0):
   epoch_size = ((len(data) // model.batch_size) - 1) // model.num_steps
   start_time = time.time()
   hidden = model.init_hidden()
+  savehidden = copy.deepcopy(hidden)
   costs = 0.0
   iters = 0
   for step, (x, y) in enumerate(reader.ptb_iterator(data, model.batch_size, model.num_steps)):
+    #print(x,y)
+
     inputs = Variable(torch.from_numpy(x.astype(np.int64)).transpose(0, 1).contiguous()).cuda()
     model.zero_grad()
-    hidden = repackage_hidden(hidden)
+    #print(hidden)
+    #print(x,'   x ', y, ' print x and y')
+    '''
+     hidden = repackage_hidden(hidden)
+     modified - ashray17aman
+    '''
+    hidden = copy.deepcopy(savehidden)
     outputs, hidden = model(inputs, hidden)
     targets = Variable(torch.from_numpy(y.astype(np.int64)).transpose(0, 1).contiguous()).cuda()
     tt = torch.squeeze(targets.view(-1, model.batch_size * model.num_steps))
 
     loss = criterion(outputs.view(-1, model.vocab_size), tt)
-    costs += loss.data[0] * model.num_steps
+    #print(loss)
+    costs += torch.Tensor.item(loss.data) * model.num_steps
     iters += model.num_steps
 
     if is_train:
